@@ -12,11 +12,9 @@ run the naoqi server:
 1 - cd /opt/Aldebaran/naoqi..(use tab)
 2 - ./naoqi 
 
-run the modim server: 
---
+run the modim server:
 1-  cd /home/robot/src/modim/src/GUI/
-2-  python ws_server.py -robot pepper 
---
+2-  python ws_server.py -robot pepper
 
 run the modim client:
 1-  cd playground/html/sample/scripts/
