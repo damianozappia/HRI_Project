@@ -1,0 +1,31 @@
+IMAGE
+<*,*,*,*>:  img/people.jpg
+----
+TEXT
+<*,*,it,*>: In quanti siete?
+<*,*,*,*>:  How many people are you? 
+----
+TTS
+<*,*,it,*>: In quanti siete?
+<*,*,*,*>:  How many people are you? 
+----
+BUTTONS
+one
+<*,*,it,*>: una
+<*,*,*,*>:  one
+two
+<*,*,it,*>: due
+<*,*,*,*>:  two
+three
+<*,*,it,*>: tre
+<*,*,*,*>:  three
+four
+<*,*,it,*>: quattro
+<*,*,*,*>:  four
+bird
+<*,*,it,*>: Uccello
+<*,*,*,*>:  Bird
+bear
+<*,*,it,*>: Orso
+<*,*,*,*>:  Bear
+----

@@ -1,0 +1,11 @@
+IMAGE
+<*,*,*,*>:  img/one_person.jpg
+----
+TEXT
+<*,*,it,*>: Ecco un tavolo per uno
+<*,*,*,*>:  Here is a table for one person
+----
+TTS
+<*,*,it,*>: Ecco un tavolo per uno
+<*,*,*,*>:  Here is a table for one person
+----
