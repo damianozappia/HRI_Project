@@ -24,7 +24,7 @@ run the modim server:
 
 run the modim client:
 
-1-  cd playground/html/sample/scripts/
-1-  python restaurant.py
+1-  cd playground/html/sample/scripts/ \
+2-  python restaurant.py
 
 the file restaurant.py contains at the moment a siample interaction where a to guest coming to the restaurant is asked how many people they are, and depending on his answer a table for the corresponding number of people is assigned  
