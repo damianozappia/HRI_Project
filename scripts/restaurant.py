@@ -36,11 +36,21 @@ def i2():
 
     im.ask('welcome')
 
+    q = ('language')
+    a = im.ask(q)
+    print("the A ISSSSSS: ", a)
+    #print("THE TYPE OF a IS ", type(a))
+    
+    if a.find("italian"):
+        im.setProfile(['*', '*', 'it', '*'])
+
+    im.execute(a)
+
 
     q = ('people')
     
     a = im.ask(q)
-
+    
     if (a!='timeout'):
         im.execute(a)
         im.execute('see_you')
