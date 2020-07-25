@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/five_people.jpg
+----
+TEXT
+<*,*,it,*>: Ecco un tavolo per 4
+<*,*,es,*>: aquí hay una tabla para 5
+<*,*,*,*>:  Here is a table for five people
+----
+TTS
+<*,*,it,*>: Ecco un tavolo per 5
+<*,*,es,*>: aquí hay una tabla para 5
+<*,*,*,*>:  Here is a table for five people
+----

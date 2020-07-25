@@ -1,0 +1,19 @@
+IMAGE
+<*,*,*,*>:  img/flags.jpg
+----
+TEXT
+<*,*,it,*>: Seleziona la lingua
+<*,*,*,*>:  Chose your language 
+----
+TTS
+<*,*,it,*>: Seleziona la lingua
+<*,*,*,*>:  Chose your language 
+----
+BUTTONS
+italiano
+<*,*,*,*>:  italiano
+english
+<*,*,*,*>:  english
+spanish
+<*,*,*,*>:  spanish
+----

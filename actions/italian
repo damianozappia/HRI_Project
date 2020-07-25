@@ -1,0 +1,13 @@
+PROFILE: <*,*,it,*>
+
+IMAGE
+<*,*,*,*>:  img/italian.jpg
+----
+TEXT
+<*,*,it,*>: Italiano selezionato
+<*,*,*,*>:  Italiano selected
+----
+TTS
+<*,*,it,*>: Italiano selezionato
+<*,*,*,*>:  Italiano selected
+----
