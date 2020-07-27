@@ -38,14 +38,22 @@ def i2():
 
     q = ('language')
     a = im.ask(q)
-    print("the A ISSSSSS: ", a)
+
+    print("-------------------------------")
+    print("the A IS: ", a)
+    print("-------------------------------")
     #print("THE TYPE OF a IS ", type(a))
     
-    if a.find("italian"):
+    if(a.find('italian') != -1):
         im.setProfile(['*', '*', 'it', '*'])
+# spanish doesn't work because the option is not present by system (we have to see how to fix)
+    elif(a.find('spanish') != -1):
+        im.setProfile(['*', '*', 'es', '*'])
+    elif(a.find('english') != -1):
+        im.setProfile(['*', '*', 'en', '*'])
+
 
     im.execute(a)
-
 
     q = ('people')
     

@@ -3,29 +3,33 @@ IMAGE
 ----
 TEXT
 <*,*,it,*>: In quanti siete?
+<*,*,es,*>: cuantos son ustedes?
 <*,*,*,*>:  How many people are you? 
 ----
 TTS
 <*,*,it,*>: In quanti siete?
+<*,*,es,*>: cuantos son ustedes?
 <*,*,*,*>:  How many people are you? 
 ----
 BUTTONS
 one
 <*,*,it,*>: una
+<*,*,es,*>: uno
 <*,*,*,*>:  one
 two
 <*,*,it,*>: due
+<*,*,es,*>: dos
 <*,*,*,*>:  two
 three
 <*,*,it,*>: tre
+<*,*,es,*>: tres
 <*,*,*,*>:  three
 four
 <*,*,it,*>: quattro
+<*,*,es,*>: quatro
 <*,*,*,*>:  four
-bird
-<*,*,it,*>: Uccello
-<*,*,*,*>:  Bird
-bear
-<*,*,it,*>: Orso
-<*,*,*,*>:  Bear
+five
+<*,*,it,*>: cinque
+<*,*,es,*>: cinco
+<*,*,*,*>:  five
 ----

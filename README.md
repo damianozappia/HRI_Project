@@ -1,5 +1,5 @@
 # HRI_Project
-HRI Project - Elective in AI
+###HRI Project - Elective in AI
 
 Inside this master branch you find all the files corresponding to "sample" directory of playgorund folder.
 
@@ -10,7 +10,7 @@ All actions have to be done from docker folder:
 ./run_nginx.bash   //for the image pepper 
 
 
-Then after executing the command ./run_bash_0.4.1:
+Then after executing the command ./run_bash 0.4.1:
 
 run the naoqi server: 
 
@@ -21,6 +21,8 @@ run the modim server:
 
 1-  cd /home/robot/src/modim/src/GUI/ \
 2-  python ws_server.py -robot pepper
+
+Go on the browser at the url: http://localhost/sample/index.html
 
 run the modim client:
 
