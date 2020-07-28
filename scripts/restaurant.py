@@ -2,6 +2,7 @@ import sys
 import time
 import os
 import random
+import numpy as np
 
 try:
     sys.path.insert(0, os.getenv('MODIM_HOME')+'/src/GUI')
@@ -39,10 +40,6 @@ def i2():
     q = ('language')
     a = im.ask(q)
 
-    print("-------------------------------")
-    print("the A IS: ", a)
-    print("-------------------------------")
-    #print("THE TYPE OF a IS ", type(a))
     
     if(a.find('italian') != -1):
         im.setProfile(['*', '*', 'it', '*'])
@@ -56,6 +53,26 @@ def i2():
     im.execute(a)
 
     q = ('people')
+
+    if(a.find('one') != -1):
+        if(tables[1][1] == 1):
+          tables[1][1] = 0
+        else:
+          im.execute('full')
+
+    if(a.find('two') != -1):
+      if(tables[1][2] == 1):
+          tables[1][2] = 0
+      else:
+        im.execute('full')
+
+    if(a.find('tree') != -1):
+      if(tables[1][3] == 1):
+          tables[1][3] = 0
+      else:
+        im.execute('full')
+
+
     
     a = im.ask(q)
     
@@ -74,6 +91,10 @@ if __name__ == "__main__":
     mws.setDemoPathAuto(__file__)
     # remote execution
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
+
+
+    tables = np.ones((2,3), dtype = 'bool')
+   
 
     mws.run_interaction(i2)
 
