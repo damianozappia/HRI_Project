@@ -4,6 +4,9 @@ import os
 import random
 import numpy as np
 
+#tables matrix for the seats 
+tables = np.ones((2,3), dtype = 'bool')
+
 try:
     sys.path.insert(0, os.getenv('MODIM_HOME')+'/src/GUI')
 except Exception as e:
@@ -41,43 +44,45 @@ def i2():
     a = im.ask(q)
 
     
-    if(a.find('italian') != -1):
+    if(a == 'italiano'):
         im.setProfile(['*', '*', 'it', '*'])
-# spanish doesn't work because the option is not present by system (we have to see how to fix)
-    elif(a.find('spanish') != -1):
+    # spanish doesn't work because the option is not present by system (we have to see how to fix)
+    elif(a == 'spanish'):
         im.setProfile(['*', '*', 'es', '*'])
-    elif(a.find('english') != -1):
+    elif(a == 'english'):
         im.setProfile(['*', '*', 'en', '*'])
-
 
     im.execute(a)
 
+    # ---------------------
+    # tables don't work because I don't know how to pass parameters to functions while using modim
+
     q = ('people')
-
-    if(a.find('one') != -1):
-        if(tables[1][1] == 1):
-          tables[1][1] = 0
-        else:
-          im.execute('full')
-
-    if(a.find('two') != -1):
-      if(tables[1][2] == 1):
-          tables[1][2] = 0
-      else:
-        im.execute('full')
-
-    if(a.find('tree') != -1):
-      if(tables[1][3] == 1):
-          tables[1][3] = 0
-      else:
-        im.execute('full')
-
-
-    
     a = im.ask(q)
+
+    if(a == 'one'):
+        if(tables[0][0] == True):
+            tables[0][0] = False
+            im.execute(a)
+        else:
+            im.execute('full')
+
+    if(a == 'two'):
+        if(tables[0][1] == True):
+            tables[0][1] = False
+            im.execute(a)
+        else:
+            im.execute('full')
+
+    if(a == 'tree'):
+        if(tables[0][2] == True):
+            tables[0][2] = False
+            im.execute(a)
+        else:
+            im.execute('full')
+    
     
     if (a!='timeout'):
-        im.execute(a)
         im.execute('see_you')
 
     im.init()
@@ -92,9 +97,6 @@ if __name__ == "__main__":
     # remote execution
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
-
-    tables = np.ones((2,3), dtype = 'bool')
-   
 
     mws.run_interaction(i2)
 

@@ -1,9 +1,11 @@
 TEXT
 <*,*,it,*>: Siamo pieni, mi dispiace..
+<*,*,es,*>: Estamos llenos, lo siento..
 <*,*,*,*>:  There are no more tables available, sorry..
 ----
 TTS
 <*,*,it,*>: Siamo pieni, mi dispiace..
+<*,*,es,*>: Estamos llenos, lo siento..
 <*,*,*,*>:  There are no more tables available, sorry..
 ----
 
