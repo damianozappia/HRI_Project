@@ -88,6 +88,34 @@ def i2():
     im.init()
 
 
+def menu():
+
+    im.init()
+    #im.execute('action1')
+
+    a = im.executeModality('TEXT_default','Are your ready to order?')
+    im.executeModality('ASR',['yes','no'])
+    
+    #now we wait for answer
+    a = im.ask(actionname=None, timeout=10)
+
+    while(a != 'yes'):
+      a = im.executeModality('TEXT_default','Ok, I will wait then..')
+      time.sleep(5)
+      #ask again if guests are ready
+      a = im.executeModality('TEXT_default','Are your ready to order?')
+      im.executeModality('ASR',['yes','no'])
+      a = im.ask(actionname=None, timeout=10)
+    
+    a = im.ask('menu', timeout=10)
+    if (a!='timeout'):
+        im.execute(a)
+        im.execute('goodbye')
+
+
+    im.init()
+
+
 if __name__ == "__main__":
 
     mws = ModimWSClient()
@@ -98,6 +126,7 @@ if __name__ == "__main__":
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
 
-    mws.run_interaction(i2)
+    #mws.run_interaction(i2)
+    mws.run_interaction(menu)
 
 

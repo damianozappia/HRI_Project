@@ -1,0 +1,31 @@
+IMAGE
+<*,*,*,*>:  img/dishes.jpg
+----
+TEXT
+<*,*,it,*>: Ecco il nostro menu
+<*,*,es,*>: Aqui esta nuestro menu
+<*,*,*,*>:  here is our menu
+----
+TTS
+<*,*,it,*>: Ecco il nostro menu
+<*,*,es,*>: Aqui esta nuestro menu
+<*,*,*,*>:  here is our menu 
+----
+BUTTONS
+salads
+<*,*,it,*>: insalata 
+<*,*,es,*>: salada
+<*,*,*,*>:  cesar salad
+main courses
+<*,*,it,*>: pasta al pomodoro
+<*,*,es,*>: ---
+<*,*,*,*>:  tomato's spaghetti
+desserts
+<*,*,it,*>: cannoli
+<*,*,es,*>: ---
+<*,*,*,*>:  sicilian cannoli
+drinks
+<*,*,it,*>: acqua
+<*,*,es,*>: agua
+<*,*,*,*>:  water
+----
