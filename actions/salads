@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/salad.jpg
+----
+TEXT
+<*,*,it,*>: insalata aggiunta all'ordinazione
+<*,*,es,*>: insalata aggiunta all'ordinazione
+<*,*,*,*>:  salad added to the order
+----
+TTS
+<*,*,it,*>: insalata aggiunta all'ordinazione
+<*,*,es,*>: insalata aggiunta all'ordinazione
+<*,*,*,*>:  salad added to the order
+----

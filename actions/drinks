@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/water.jpg
+----
+TEXT
+<*,*,it,*>: acqua aggiunta all'ordinazione
+<*,*,es,*>: acqua aggiunta all'ordinazione
+<*,*,*,*>:  water added to the order
+----
+TTS
+<*,*,it,*>: acqua aggiunta all'ordinazione
+<*,*,es,*>: acqua aggiunta all'ordinazione
+<*,*,*,*>:  water added to the order
+----

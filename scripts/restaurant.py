@@ -108,8 +108,34 @@ def menu():
       a = im.ask(actionname=None, timeout=10)
     
     a = im.ask('menu', timeout=10)
+
     if (a!='timeout'):
         im.execute(a)
+
+
+
+    #--------------
+    b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
+    im.executeModality('ASR',['yes','no'])
+
+    while(b == "yes"):
+      b = im.executeModality('TEXT_default','great, tell me..')
+      time.sleep(2)
+
+      b = im.ask('menu', timeout=10)
+
+      b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
+      im.executeModality('ASR',['yes','no'])
+
+     
+
+    #now we wait for answer
+    b = im.ask(actionname=None, timeout=10)
+
+    #-------------------------
+   
+    if (b!='timeout'):
+        im.execute(b)
         im.execute('goodbye')
 
 

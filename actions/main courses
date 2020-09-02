@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/spaghetti.jpg
+----
+TEXT
+<*,*,it,*>: pasta aggiunta all'ordinazione
+<*,*,es,*>: pasta aggiunta all'ordinazione
+<*,*,*,*>:  pasta added to the order
+----
+TTS
+<*,*,it,*>: pasta aggiunta all'ordinazione
+<*,*,es,*>: pasta aggiunta all'ordinazione
+<*,*,*,*>:  pasta added to the order
+----
