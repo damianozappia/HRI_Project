@@ -142,6 +142,33 @@ def menu():
     im.init()
 
 
+
+def info():
+
+    im.init()
+
+    a = im.ask('info')
+
+    if (a!='timeout'):
+        im.execute(a)
+    else:
+        im.execute('goodbye')
+
+    #if info are requested we start asking what guests need to know
+    if (a == 'start'):
+        a = im.ask('info_2')
+    # then if the time is not over, we execute the action related to the requested info
+    if (a!='timeout'):
+        im.execute(a)
+        im.execute('goodbye')
+
+    im.init()
+
+
+    
+
+
+
 if __name__ == "__main__":
 
     mws = ModimWSClient()
@@ -153,6 +180,7 @@ if __name__ == "__main__":
 
 
     #mws.run_interaction(i2)
-    mws.run_interaction(menu)
+    #mws.run_interaction(menu)
+    mws.run_interaction(info)
 
 

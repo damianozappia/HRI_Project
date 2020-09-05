@@ -1,0 +1,23 @@
+IMAGE
+<*, *, *, *>:  img/info.jpg
+----
+TEXT
+<*,*,it,*>: Per informazioni generali, chiedete pure
+<*,*,es,*>: Si tiene alguna otra solicitud, por favor dígame
+<*,*,*,*>:  Please, ask me if you have general questions
+----
+GESTURE
+<*,*,*,*>: animations/Stand/Gestures/Hey_1
+----
+TTS
+<*,*,it,*>: Se avete altre richieste, ditemi pure!
+<*,*,es,*>: Si tiene alguna otra solicitud, por favor dígame!
+<*,*,*,*>:  For further questions, please ask
+----
+BUTTONS
+start
+<*,*,it,*>: Tocca per chiedere
+<*,*,es,*>: Tocca per chiedere
+<*,*,*,*>:  Touch to ask
+----
+

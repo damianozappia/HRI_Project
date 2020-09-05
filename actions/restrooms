@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/restrooms.jpg
+----
+TEXT
+<*,*,it,*>: Il bagno è in fondo a destra
+<*,*,es,*>: el baño está en el extremo derecho
+<*,*,*,*>:  The restrooms are on the far right
+----
+TTS
+<*,*,it,*>: Il bagno è in fondo a destra
+<*,*,es,*>: el baño está en el extremo derecho
+<*,*,*,*>:  The restrooms are on the far right
+----

@@ -1,0 +1,32 @@
+IMAGE
+<*, *, *, *>:  img/info.jpg
+----
+TEXT
+<*,*,it,*>: Di che informazioni avete bisogno?
+<*,*,es,*>: Qué información necesitas?
+<*,*,*,*>:  Which info do you need?
+----
+GESTURE
+<*,*,*,*>: animations/Stand/Gestures/Hey_1
+----
+TTS
+<*,*,it,*>: Di che informazioni avete bisogno?
+<*,*,es,*>: Qué información necesitas?
+<*,*,*,*>:  Which info do you need?
+----
+ASR
+<*,*,it,*>: { 'restrooms': ['dove è il bagno?','la toilette?'], 'opening':['quali sono gli orari di apertura?', 'a che ora chiudete?'] }
+<*,*,es,*>: { 'restrooms': ['donde está el baño?','el bano?'], 'opening':['cuales son los horarios de apertura?', '¿A que hora cierras?'] }
+<*,*,*,*>: { 'restrooms': ['where are the restrooms?','for the toilet?'], 'times':['which are the opening times?', 'at what time you close?'] }
+----
+BUTTONS
+restrooms
+<*,*,it,*>: Bagno
+<*,*,es,*>: baños
+<*,*,*,*>:  restrooms
+times
+<*,*,it,*>: Orari di apertura
+<*,*,es,*>: horarios de apertura
+<*,*,*,*>:  opening times
+----
+

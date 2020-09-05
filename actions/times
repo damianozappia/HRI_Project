@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/opening_times.jpg
+----
+TEXT
+<*,*,it,*>: Siamo aperti dalle 12.00 alle 16.00 e dalle 19.00 alle 00.00
+<*,*,es,*>: eEstamos abiertos de 12.00 a 16.00 y de 19.00 a 00.00
+<*,*,*,*>:  We are open from 12 to 4 pm and from 7pm to 12 am
+----
+TTS
+<*,*,it,*>: Siamo aperti dalle 12.00 alle 16.00 e dalle 19.00 alle 00.00
+<*,*,es,*>: eEstamos abiertos de 12.00 a 16.00 y de 19.00 a 00.00
+<*,*,*,*>:  We are open from 12 to 4 pm and from 7pm to 12 am
+----
