@@ -1,8 +1,11 @@
 import sys
 import time
+import datetime
 import os
+import csv
 import random
 import numpy as np
+import io
 
 #tables matrix for the seats 
 tables = np.ones((2,3), dtype = 'bool')
@@ -17,6 +20,36 @@ except Exception as e:
 
 import ws_client
 from ws_client import *
+
+def init_tables():
+    nowTime = datetime.datetime.now()
+
+    for table_num in range(1,6):
+        with io.open('/home/robot/playground/html/sample/logs/table_'+str(table_num)+'.csv', 'w') as csvFile:
+            csvFile.writelines(unicode('0,'+str(nowTime)+"\n"))
+        csvFile.close()
+
+def is_table_free(table_num):
+    with io.open('/home/robot/playground/html/sample/logs/table_'+str(table_num)+'.csv', "r") as csvFile:
+        line = csvFile.readline()
+        while line:
+            lastline = line
+            line = csvFile.readline()
+    csvFile.close()
+    numclients = lastline.split(',')[0]
+    return int(numclients) == 0
+
+def write_table(table_num, val):
+    with io.open('/home/robot/playground/html/sample/logs/table_'+str(table_num)+'.csv', 'a') as csvFile:
+        csvFile.writelines(unicode('val,'+str(nowTime)+"\n"))
+    csvFile.close()
+
+def register_customer():
+    pass
+
+def customer_payment():
+    pass
+
 
 def i1():
 
@@ -54,9 +87,7 @@ def i2():
 
     im.execute(a)
 
-    # ---------------------
-    # tables don't work because I don't know how to pass parameters to functions while using modim
-
+    
     q = ('people')
     a = im.ask(q)
 
@@ -147,6 +178,12 @@ def info():
 
     im.init()
 
+    tables = ['Putooooo', 'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH']
+    print("=======================================================")
+    print(tables)
+    print("=======================================================")
+
+
     a = im.ask('info')
 
     if (a!='timeout'):
@@ -170,8 +207,14 @@ def info():
 
 
 if __name__ == "__main__":
+    tables = "1 1 1 1 1 1"
+    init_tables()
 
     mws = ModimWSClient()
+    # f = open("/home/robot/playground/html/sample/logs/tables.txt","w")
+    # f.write(tables)
+    # f.close()
+
 
     # local execution
     mws.setDemoPathAuto(__file__)
@@ -182,5 +225,3 @@ if __name__ == "__main__":
     #mws.run_interaction(i2)
     #mws.run_interaction(menu)
     mws.run_interaction(info)
-
-
