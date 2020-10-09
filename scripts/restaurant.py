@@ -149,24 +149,23 @@ def menu():
     b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
     im.executeModality('ASR',['yes','no'])
 
-    while(b == "yes"):
+    while(b != "no"):
       b = im.executeModality('TEXT_default','great, tell me..')
-      time.sleep(2)
+      time.sleep(1)
 
       b = im.ask('menu', timeout=10)
 
       b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
       im.executeModality('ASR',['yes','no'])
-
+      
+      #now we wait for answer
+      b = im.ask(actionname=None, timeout=10)
      
-
-    #now we wait for answer
-    b = im.ask(actionname=None, timeout=10)
-
+    time.sleep(3)
     #-------------------------
    
     if (b!='timeout'):
-        im.execute(b)
+        #im.execute(b)
         im.execute('goodbye')
 
 
@@ -223,5 +222,5 @@ if __name__ == "__main__":
 
 
     #mws.run_interaction(i2)
-    #mws.run_interaction(menu)
-    mws.run_interaction(info)
+    mws.run_interaction(menu)
+    #mws.run_interaction(info)
