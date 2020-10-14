@@ -54,26 +54,8 @@ def add_to_order(x):
     f = open("menu.txt", "a")
     f.write(x)
     f.close()
-    
 
-
-def i1():
-
-    im.init()
-
-    im.ask('welcome')  # wait for button
-
-    q = random.choice(['animal','color'])
-
-    a = im.ask(q)
-
-    if (a!='timeout'):
-        im.execute(a)
-        im.execute('goodbye')
-
-    im.init()
-
-def i2():
+def welcome():
     tables_cap = [2, 4, 2, 2, 5]
 
     im.init()
@@ -264,6 +246,6 @@ if __name__ == "__main__":
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
 
-    mws.run_interaction(i2)
-    # mws.run_interaction(menu)
+    # mws.run_interaction(welcome)
+    mws.run_interaction(menu)
     #mws.run_interaction(info)
