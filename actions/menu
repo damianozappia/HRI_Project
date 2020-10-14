@@ -12,19 +12,19 @@ TTS
 <*,*,*,*>:  here is our menu 
 ----
 BUTTONS
-salads
+salad
 <*,*,it,*>: insalata 
 <*,*,es,*>: salada
 <*,*,*,*>:  cesar salad
-main courses
+pasta
 <*,*,it,*>: pasta al pomodoro
 <*,*,es,*>: ---
 <*,*,*,*>:  tomato's spaghetti
-desserts
+cannoli
 <*,*,it,*>: cannoli
 <*,*,es,*>: ---
 <*,*,*,*>:  sicilian cannoli
-drinks
+water
 <*,*,it,*>: acqua
 <*,*,es,*>: agua
 <*,*,*,*>:  water

@@ -50,6 +50,12 @@ def register_customer():
 def customer_payment():
     pass
 
+def add_to_order(x):
+    f = open("menu.txt", "a")
+    f.write(x)
+    f.close()
+    
+
 
 def i1():
 
@@ -139,6 +145,33 @@ def menu():
       a = im.ask(actionname=None, timeout=10)
     
     a = im.ask('menu', timeout=10)
+
+    print("-------------------------------------------")
+    print("the a is ", a)
+    print("-------------------------------------------")
+
+
+    '''
+    # code to convert from unicode to string
+    utf8string = a.encode("utf-8")
+    asciistring = unicodestring.encode("ascii")
+    isostring = unicodestring.encode("ISO-8859-1")
+    food = unicodestring.encode("utf-16")
+    # then I call the function that add the food to the file of order
+    add_to_order(aux)
+    '''
+
+    
+    # here I add the ordination to a file and then print it on terminal
+    f = open("menu.txt", "a")
+    f.write(a)
+    f.close()
+    
+    print("============================================")
+    f = open("menu.txt", "r")
+    print(f.read())
+    print("============================================")
+    
 
     if (a!='timeout'):
         im.execute(a)
