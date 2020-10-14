@@ -149,7 +149,7 @@ def menu():
     while(menu_flag):
       
         b = im.ask('menu', timeout=10)
-        dishes_ordered = dishes_ordered + b
+        dishes_ordered = dishes_ordered + b + ", "
 
         b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
         im.executeModality('ASR',['yes','no'])
@@ -161,8 +161,12 @@ def menu():
             time.sleep(1)
         else:
             menu_flag = False
+
+    with open('/home/robot/playground/html/sample/logs/table_'+str(table_num)+'.csv', 'a') as csvFile:
+        csvFile.writelines(unicode(dishes_ordered+"\n"))
+    csvFile.close()
      
-    time.sleep(3)
+    time.sleep(2)
     #-------------------------
    
     if (b!='timeout'):

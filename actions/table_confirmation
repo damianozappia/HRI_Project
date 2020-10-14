@@ -4,8 +4,8 @@ TEXT
 <*,*,*,*>:  Can you tell me your table number please?
 ----
 ASR
-<*,*,it,*>: { 'one':['uno','1'], 'two': ['due','2'], 'three': ['tre','3'], 'four':['quattro','4'], 'five':['cinque','5'] }
-<*,*,es,*>: { 'one':['uno','1'], 'two': ['dos','2'], 'three': ['tres','3'], 'four':['cuatro','4'], 'five':['cinco','5'] }
-<*,*,*,*>:  { 'one':['one','1'], 'two': ['two','2'], 'three': ['three','3'], 'four':['four','4'], 'five':['five','5'] } 
+<*,*,it,*>: { '1':['uno','1'], '2': ['due','2'], '3': ['tre','3'], '4':['quattro','4'], '5':['cinque','5'] }
+<*,*,es,*>: { '1':['uno','1'], '2': ['dos','2'], '3': ['tres','3'], '4':['cuatro','4'], '5':['cinco','5'] }
+<*,*,*,*>:  { '1':['one','1'], '2': ['two','2'], '3': ['three','3'], '4':['four','4'], '5':['five','5'] } 
 ----
 
