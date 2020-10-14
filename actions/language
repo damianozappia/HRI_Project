@@ -3,7 +3,7 @@ IMAGE
 ----
 TEXT
 <*,*,it,*>: Seleziona la lingua
-<*,*,es,*>: elige tu idioma
+<*,*,esp,*>: elige tu idioma
 <*,*,*,*>:  Chose your language 
 ----
 TTS
