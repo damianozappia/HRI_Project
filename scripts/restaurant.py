@@ -74,6 +74,7 @@ def i1():
     im.init()
 
 def i2():
+    tables_cap = [2, 4, 2, 2, 5]
 
     im.init()
 
@@ -93,31 +94,37 @@ def i2():
 
     im.execute(a)
 
-    
     q = ('people')
     a = im.ask(q)
 
     if(a == 'one'):
-        if(tables[0][0] == True):
-            tables[0][0] = False
-            im.execute(a)
-        else:
-            im.execute('full')
+        num_clients = 1
+    elif(a == 'two'):
+        num_clients = 2
+    elif(a == 'three'):
+        num_clients = 3
+    elif(a == 'four'):
+        num_clients = 4
 
-    if(a == 'two'):
-        if(tables[0][1] == True):
-            tables[0][1] = False
-            im.execute(a)
-        else:
-            im.execute('full')
+    indexes = []
+    for index, cap in enumerate(tables_cap):
+        if cap >= num_clients:
+            indexes.append(index)
 
-    if(a == 'tree'):
-        if(tables[0][2] == True):
-            tables[0][2] = False
+    table_available = False
+    for index in indexes:
+        with open('/home/robot/playground/html/sample/logs/table_'+str(index+1)+'.csv', "r") as csvFile:
+            line = csvFile.readline()
+            while line:
+                lastline = line
+                line = csvFile.readline()
+        csvFile.close()
+        numclients = lastline.split(',')[0]
+        if int(numclients) is 0:
+            table_available = True
             im.execute(a)
-        else:
-            im.execute('full')
-    
+    if not table_available:
+        im.execute('full')    
     
     if (a!='timeout'):
         im.execute('see_you')
@@ -254,6 +261,6 @@ if __name__ == "__main__":
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
 
-    #mws.run_interaction(i2)
-    mws.run_interaction(menu)
+    mws.run_interaction(i2)
+    # mws.run_interaction(menu)
     #mws.run_interaction(info)

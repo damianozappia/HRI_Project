@@ -16,7 +16,7 @@ In order to see a simulation of the table of the pepper robot
 ### Run Docker
 
     cd HRI/doker
-    sudo ./run_bash 0.4.1
+    sudo ./run.bash 0.4.1
 
 For special access to the features of the robot pepper use naoqui server:
 
