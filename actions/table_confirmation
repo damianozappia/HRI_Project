@@ -1,0 +1,11 @@
+TEXT
+<*,*,it,*>: Potete confermare il numero del tavolo per favore?
+<*,*,es,*>: Pueden confirmarme el número de su mesa por favor?
+<*,*,*,*>:  Can you tell me your table number please?
+----
+ASR
+<*,*,it,*>: { 'one':['uno','1'], 'two': ['due','2'], 'three': ['tre','3'], 'four':['quattro','4'], 'five':['cinque','5'] }
+<*,*,es,*>: { 'one':['uno','1'], 'two': ['dos','2'], 'three': ['tres','3'], 'four':['cuatro','4'], 'five':['cinco','5'] }
+<*,*,*,*>:  { 'one':['one','1'], 'two': ['two','2'], 'three': ['three','3'], 'four':['four','4'], 'five':['five','5'] } 
+----
+

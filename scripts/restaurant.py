@@ -56,24 +56,7 @@ def add_to_order(x):
     f.close()
     
 
-
-def i1():
-
-    im.init()
-
-    im.ask('welcome')  # wait for button
-
-    q = random.choice(['animal','color'])
-
-    a = im.ask(q)
-
-    if (a!='timeout'):
-        im.execute(a)
-        im.execute('goodbye')
-
-    im.init()
-
-def i2():
+def welcome():
     tables_cap = [2, 4, 2, 2, 5]
 
     im.init()
@@ -154,55 +137,30 @@ def menu():
       im.executeModality('ASR',['yes','no'])
       a = im.ask(actionname=None, timeout=10)
     
-    a = im.ask('menu', timeout=10)
-
+    table_num = im.ask('table_confirmation', timeout=10)
     print("-------------------------------------------")
-    print("the a is ", a)
+    print("the table number issssss", table_num)
     print("-------------------------------------------")
-
-
-    '''
-    # code to convert from unicode to string
-    utf8string = a.encode("utf-8")
-    asciistring = unicodestring.encode("ascii")
-    isostring = unicodestring.encode("ISO-8859-1")
-    food = unicodestring.encode("utf-16")
-    # then I call the function that add the food to the file of order
-    add_to_order(aux)
-    '''
-
-    
-    # here I add the ordination to a file and then print it on terminal
-    f = open("menu.txt", "a")
-    f.write(a)
-    f.close()
-    
-    print("============================================")
-    f = open("menu.txt", "r")
-    print(f.read())
-    print("============================================")
-    
-
-    if (a!='timeout'):
-        im.execute(a)
-
 
 
     #--------------
-    b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
-    im.executeModality('ASR',['yes','no'])
-
-    while(b != "no"):
-      b = im.executeModality('TEXT_default','great, tell me..')
-      time.sleep(1)
-
-      b = im.ask('menu', timeout=10)
-
-      b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
-      im.executeModality('ASR',['yes','no'])
+    menu_flag = True
+    dishes_ordered = ""
+    while(menu_flag):
       
-      #now we wait for answer
-      b = im.ask(actionname=None, timeout=10)
+        b = im.ask('menu', timeout=10)
+        dishes_ordered = dishes_ordered + b
+
+        b = im.executeModality('TEXT_default','Is it ok? do you want something else?')
+        im.executeModality('ASR',['yes','no'])
+        #now we wait for answer
+        b = im.ask(actionname=None, timeout=10)
+
+        if b != "no":
+            b = im.executeModality('TEXT_default','great, tell me..')
+            time.sleep(1)
+        else:
+            menu_flag = False
      
     time.sleep(3)
     #-------------------------
@@ -264,6 +222,6 @@ if __name__ == "__main__":
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
 
-    mws.run_interaction(i2)
-    # mws.run_interaction(menu)
+    #mws.run_interaction(welcome)
+    mws.run_interaction(menu)
     #mws.run_interaction(info)
