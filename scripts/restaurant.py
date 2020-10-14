@@ -88,6 +88,9 @@ def i2():
         im.setProfile(['*', '*', 'it', '*'])
     # spanish doesn't work because the option is not present by system (we have to see how to fix)
     elif(a == 'spanish'):
+        print("-------------------------------------------")
+        print("the a is ", a)
+        print("-------------------------------------------")
         im.setProfile(['*', '*', 'es', '*'])
     elif(a == 'english'):
         im.setProfile(['*', '*', 'en', '*'])
