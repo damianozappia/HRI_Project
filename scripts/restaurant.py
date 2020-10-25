@@ -179,15 +179,7 @@ def menu():
 
 
 def info():
-
     im.init()
-
-    tables = ['Putooooo', 'HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH']
-    print("=======================================================")
-    print(tables)
-    print("=======================================================")
-
-
     a = im.ask('info')
 
     if (a!='timeout'):
