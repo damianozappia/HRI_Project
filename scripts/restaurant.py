@@ -7,19 +7,22 @@ import random
 import numpy as np
 import io
 
+
+
 #tables matrix for the seats 
 tables = np.ones((2,3), dtype = 'bool')
 
 try:
     sys.path.insert(0, os.getenv('MODIM_HOME')+'/src/GUI')
 except Exception as e:
-    print "Please set MODIM_HOME environment variable to MODIM folder."
+    print ("Please set MODIM_HOME environment variable to MODIM folder.")
     sys.exit(1)
 
 # Set MODIM_IP to connnect to remote MODIM server
 
 import ws_client
 from ws_client import *
+import qi
 
 def init_tables():
     nowTime = datetime.datetime.now()
