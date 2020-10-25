@@ -197,12 +197,23 @@ def info():
     if (a!='timeout'):
         im.execute(a)
         im.execute('goodbye')
-
     im.init()
 
 
-    
+touchstatus = { }
 
+def onTouched(value):
+    global touchstatus
+    print "Touch value=",value
+
+    touched_bodies = []
+    for p in value:
+        if p[1]:
+            touched_bodies.append(p[0])
+        touchstatus[p[0]] = p[1]
+
+    print touched_bodies
+    print 'Status: ', touchstatus
 
 
 if __name__ == "__main__":
@@ -227,6 +238,27 @@ if __name__ == "__main__":
         print ("Can't connect to Naoqi at ip \"" + pip + "\" on port " + str(pport) +".\n"
                "Please check your script arguments. Run with -h option for help.")
         sys.exit(1)
+
+
+    app.start()
+    session = app.session
+
+    #Starting services
+    memory_service  = session.service("ALMemory")
+      
+    #Testing some functions from the ALTouch module
+    touch_service = session.service("ALTouch")
+
+    # #subscribe to any change on any touch sensor
+    # anyTouch = memory_service.subscriber("TouchChanged")
+    # idAnyTouch = anyTouch.signal.connect(onTouched)
+
+
+
+
+
+
+
 
 
     mws = ModimWSClient()
