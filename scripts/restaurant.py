@@ -143,7 +143,6 @@ def menu():
     print("the table number issssss", table_num)
     print("-------------------------------------------")
 
-
     #--------------
     menu_flag = True
     dishes_ordered = ""
@@ -178,7 +177,6 @@ def menu():
     im.init()
 
 
-
 def info():
     im.init()
     a = im.ask('info')
@@ -199,15 +197,22 @@ def info():
 
 
 touchstatus = { }
+language = 'english'
 
 def onTouched(value):
     global touchstatus
+    global language
     print ("Touch value=",value)
 
     touched_bodies = []
     for p in value:
         if p[1]:
             touched_bodies.append(p[0])
+            if p[0] == 'Head':
+                tts_service.say("I noticed you please be patient")
+                print("-------------------------------------------")
+                print ("  -- Say: "+"I noticed you please be patient")
+                print("-------------------------------------------")
         touchstatus[p[0]] = p[1]
 
     print (touched_bodies)
@@ -215,6 +220,7 @@ def onTouched(value):
 
 
 if __name__ == "__main__":
+    global tts_service
     parser = argparse.ArgumentParser()
 
     tables = "1 1 1 1 1 1"
@@ -224,9 +230,20 @@ if __name__ == "__main__":
                         help="Robot IP address.  On robot or Local Naoqi: use '127.0.0.1'.")
     parser.add_argument("--pport", type=int, default=9559,
                         help="Naoqi port number")
+    parser.add_argument("--sentence", type=str, default="hello",
+                        help="Sentence to say")
+    parser.add_argument("--language", type=str, default="English",
+                        help="language")
+    parser.add_argument("--speed", type=int, default=100,
+                        help="speed")
+    
+
     args = parser.parse_args()
     pip = args.pip
     pport = args.pport
+    strsay = args.sentence
+    language = args.language
+    speed = args.speed
 
     #Starting application
     try:
@@ -243,21 +260,18 @@ if __name__ == "__main__":
 
     #Starting services
     memory_service  = session.service("ALMemory")
-      
-    #Testing some functions from the ALTouch module
+    tts_service = session.service("ALTextToSpeech")
     touch_service = session.service("ALTouch")
+
+    tts_service.setLanguage(language)
+    tts_service.setVolume(1.0)
+    tts_service.setParameter("speed", speed)
 
     #subscribe to any change on any touch sensor
     anyTouch = memory_service.subscriber("TouchChanged")
     idAnyTouch = anyTouch.signal.connect(onTouched)
 
-
-
     mws = ModimWSClient()
-    # f = open("/home/robot/playground/html/sample/logs/tables.txt","w")
-    # f.write(tables)
-    # f.close()
-
 
     # local execution
     mws.setDemoPathAuto(__file__)
