@@ -249,9 +249,9 @@ if __name__ == "__main__":
     #Testing some functions from the ALTouch module
     touch_service = session.service("ALTouch")
 
-    # #subscribe to any change on any touch sensor
-    # anyTouch = memory_service.subscriber("TouchChanged")
-    # idAnyTouch = anyTouch.signal.connect(onTouched)
+    #subscribe to any change on any touch sensor
+    anyTouch = memory_service.subscriber("TouchChanged")
+    idAnyTouch = anyTouch.signal.connect(onTouched)
 
 
 
@@ -276,3 +276,6 @@ if __name__ == "__main__":
     mws.run_interaction(welcome)
     # mws.run_interaction(menu)
     #mws.run_interaction(info)
+
+
+    print("Interaction finished")
