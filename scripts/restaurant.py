@@ -73,7 +73,6 @@ def welcome():
     
     if(a == 'italiano'):
         im.setProfile(['*', '*', 'it', '*'])
-    # spanish doesn't work because the option is not present by system (we have to see how to fix)
     elif(a == 'spanish'):
         im.setProfile(['*', '*', 'es', '*'])
     elif(a == 'english'):
@@ -280,9 +279,9 @@ if __name__ == "__main__":
 
     try:
         while True:
-            mws.run_interaction(welcome)
-            # mws.run_interaction(menu)
-            #mws.run_interaction(info)
+            #mws.run_interaction(welcome)
+            #mws.run_interaction(menu)
+            mws.run_interaction(info)
     except KeyboardInterrupt:
          #Disconnecting callbacks and Threads
         anyTouch.signal.disconnect(idAnyTouch)
