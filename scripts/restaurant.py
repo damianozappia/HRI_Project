@@ -1,4 +1,5 @@
 import sys
+import argparse
 import time
 import datetime
 import os
@@ -74,9 +75,6 @@ def welcome():
         im.setProfile(['*', '*', 'it', '*'])
     # spanish doesn't work because the option is not present by system (we have to see how to fix)
     elif(a == 'spanish'):
-        print("-------------------------------------------")
-        print("the a is ", a)
-        print("-------------------------------------------")
         im.setProfile(['*', '*', 'es', '*'])
     elif(a == 'english'):
         im.setProfile(['*', '*', 'en', '*'])
@@ -204,7 +202,7 @@ touchstatus = { }
 
 def onTouched(value):
     global touchstatus
-    print "Touch value=",value
+    print ("Touch value=",value)
 
     touched_bodies = []
     for p in value:
@@ -212,8 +210,8 @@ def onTouched(value):
             touched_bodies.append(p[0])
         touchstatus[p[0]] = p[1]
 
-    print touched_bodies
-    print 'Status: ', touchstatus
+    print (touched_bodies)
+    print ('Status: ', touchstatus)
 
 
 if __name__ == "__main__":
@@ -255,12 +253,6 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
-
-
     mws = ModimWSClient()
     # f = open("/home/robot/playground/html/sample/logs/tables.txt","w")
     # f.write(tables)
@@ -272,10 +264,13 @@ if __name__ == "__main__":
     # remote execution
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
-
-    mws.run_interaction(welcome)
-    # mws.run_interaction(menu)
-    #mws.run_interaction(info)
-
-
-    print("Interaction finished")
+    try:
+        while True:
+            mws.run_interaction(welcome)
+            # mws.run_interaction(menu)
+            #mws.run_interaction(info)
+    except KeyboardInterrupt:
+         #Disconnecting callbacks and Threads
+        anyTouch.signal.disconnect(idAnyTouch)
+        print("Interaction finished")
+        sys.exit(1)
