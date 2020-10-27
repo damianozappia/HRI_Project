@@ -7,8 +7,7 @@ import csv
 import random
 import numpy as np
 import io
-
-
+from collections import deque
 
 #tables matrix for the seats 
 tables = np.ones((2,3), dtype = 'bool')
@@ -223,12 +222,11 @@ if __name__ == "__main__":
     # global client_queue
     # global attended_clients
 
+    client_queue.append(attended_clients)
 
-if __name__ == "__main__":
-    global tts_service
+
     parser = argparse.ArgumentParser()
 
-    tables = "1 1 1 1 1 1"
     init_tables()
 
     parser.add_argument("--pip", type=str, default=os.environ['PEPPER_IP'],
@@ -242,8 +240,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     pip = args.pip
     pport = args.pport
-    strsay = args.sentence
-    language = args.language
     speed = args.speed
 
     #Starting application
@@ -280,14 +276,18 @@ if __name__ == "__main__":
     # mws.setDemoPath('<ABSOLUTE_DEMO_PATH_ON_REMOTE_SERVER>')
 
     try:
-        while True:
-            #mws.run_interaction(welcome)
+        while len(client_queue) > 0:
+            mws.run_interaction(welcome)
+            next_turn = client_queue.popleft()
+            if len(client_queue) > 0:
+                sentence = "Calling to client with number "+str(next_turn)
                 tts_service.say(sentence)
                 print("-------------------------------------------")
                 print ("  -- Say: "+sentence)
                 print("-------------------------------------------")
+            # mws.run_interaction(info)
             #mws.run_interaction(menu)
-            mws.run_interaction(info)
+
     except KeyboardInterrupt:
          #Disconnecting callbacks and Threads
         anyTouch.signal.disconnect(idAnyTouch)
