@@ -197,23 +197,24 @@ def info():
         im.execute('goodbye')
     im.init()
 
-
+attended_clients = 1
+client_queue =  deque()
 touchstatus = { }
-language = 'english'
-
 def onTouched(value):
     global touchstatus
-    global language
-    print ("Touch value=",value)
-
+    global client_queue
+    global attended_clients
     touched_bodies = []
     for p in value:
         if p[1]:
             touched_bodies.append(p[0])
             if p[0] == 'Head':
-                tts_service.say("I noticed you please be patient")
+                client_queue.append(attended_clients)
+                attended_clients += 1
+                sentence = "I noticed you, please be patient, your turn is the number "+str(attended_clients)
+                tts_service.say(sentence)
                 print("-------------------------------------------")
-                print ("  -- Say: "+"I noticed you please be patient")
+                print ("  -- Say: "+sentence)
                 print("-------------------------------------------")
         touchstatus[p[0]] = p[1]
 
@@ -263,7 +264,7 @@ if __name__ == "__main__":
     tts_service = session.service("ALTextToSpeech")
     touch_service = session.service("ALTouch")
 
-    tts_service.setLanguage(language)
+    tts_service.setLanguage("English")
     tts_service.setVolume(1.0)
     tts_service.setParameter("speed", speed)
 
