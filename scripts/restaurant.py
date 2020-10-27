@@ -12,6 +12,7 @@ import io
 
 #tables matrix for the seats 
 tables = np.ones((2,3), dtype = 'bool')
+language = ''
 
 try:
     sys.path.insert(0, os.getenv('MODIM_HOME')+'/src/GUI')
@@ -61,6 +62,8 @@ def add_to_order(x):
     
 
 def welcome():
+    global tts_service
+    global language
     tables_cap = [2, 4, 2, 2, 5]
 
     im.init()
@@ -214,8 +217,10 @@ def onTouched(value):
                 print("-------------------------------------------")
         touchstatus[p[0]] = p[1]
 
-    print (touched_bodies)
-    print ('Status: ', touchstatus)
+if __name__ == "__main__":
+    # global tts_service
+    # global client_queue
+    # global attended_clients
 
 
 if __name__ == "__main__":
@@ -229,10 +234,6 @@ if __name__ == "__main__":
                         help="Robot IP address.  On robot or Local Naoqi: use '127.0.0.1'.")
     parser.add_argument("--pport", type=int, default=9559,
                         help="Naoqi port number")
-    parser.add_argument("--sentence", type=str, default="hello",
-                        help="Sentence to say")
-    parser.add_argument("--language", type=str, default="English",
-                        help="language")
     parser.add_argument("--speed", type=int, default=100,
                         help="speed")
     
@@ -280,6 +281,10 @@ if __name__ == "__main__":
     try:
         while True:
             #mws.run_interaction(welcome)
+                tts_service.say(sentence)
+                print("-------------------------------------------")
+                print ("  -- Say: "+sentence)
+                print("-------------------------------------------")
             #mws.run_interaction(menu)
             mws.run_interaction(info)
     except KeyboardInterrupt:
