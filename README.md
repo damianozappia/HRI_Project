@@ -39,7 +39,11 @@ Run the modim client main code:
 
 the file restaurant.py contains at the moment a simple interaction where first of all pepper asks to select the language to a guest coming into the restaurant, and then it asks how many people they are, and depending on his answer a table for the corresponding number of people is assigned, and the table is marked as taken (not available) \ 
 
-### Commands in ASR modality (keyboard interaction to simulates speech)
+### Interactions outside the tablet
+Execution through commands in ASR modality (keyboard interaction)
+
+#### Speech recognition 
+To interact with the robot using speech is needed to call ASR script:
  
 To run commands in ASR modality, another script is needed to be executed, and we have: 
 
@@ -50,3 +54,16 @@ To run commands in ASR modality, another script is needed to be executed, and we
     python human_say.py --sentence 'yes' 
 
 -the last command with yes is an example-
+
+#### Touch robot body 
+To interact with the robot by activating the sensors in its body:
+ 
+To run commands in ASR modality, another script is needed to be executed, and we have: 
+
+    cd HRI/doker
+    sudo ./run_bash 0.4.1
+
+    cd src/pepper_tools/touch
+    python touch_sim.py
+
+This will generate a touch in the head and in the hands, currently in the project is only relevant the touch in the head, therefore all the others will be ignored.
