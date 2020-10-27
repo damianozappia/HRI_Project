@@ -18,11 +18,19 @@ salad
 <*,*,*,*>:  cesar salad
 pasta
 <*,*,it,*>: pasta al pomodoro
-<*,*,es,*>: ---
+<*,*,es,*>: pasta con salsa de tomate
 <*,*,*,*>:  tomato's spaghetti
+arancini
+<*,*,it,*>: arancini siciliani
+<*,*,es,*>: Arancini siciliano
+<*,*,*,*>:  sicilian arancini
+fish
+<*,*,it,*>: pesce alla griglia
+<*,*,es,*>: pescado asado
+<*,*,*,*>:  dorada with lemon
 cannoli
 <*,*,it,*>: cannoli
-<*,*,es,*>: ---
+<*,*,es,*>: cannoli siciliano
 <*,*,*,*>:  sicilian cannoli
 water
 <*,*,it,*>: acqua
