@@ -129,7 +129,7 @@ def menu():
     im.executeModality('ASR',['yes','no'])
     
     #now we wait for answer
-    a = im.ask(actionname=None, timeout=10)
+    a = im.ask(actionname=None, timeout=20)
 
     while(a != 'yes'):
       a = im.executeModality('TEXT_default','Ok, I will wait then..')
@@ -139,7 +139,7 @@ def menu():
       im.executeModality('ASR',['yes','no'])
       a = im.ask(actionname=None, timeout=10)
     
-    table_num = im.ask('table_confirmation', timeout=10)
+    table_num = im.ask('table_confirmation', timeout=20)
     print("-------------------------------------------")
     print("the table number is", table_num)
     print("-------------------------------------------")
@@ -150,6 +150,7 @@ def menu():
     while(menu_flag):
       
         b = im.ask('menu', timeout=10)
+        im.execute(b)
         dishes_ordered = dishes_ordered + b + ", "
 
         b = im.executeModality('TEXT_default','Is it ok? do you want something else?')

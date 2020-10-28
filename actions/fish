@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/fish.jpg
+----
+TEXT
+<*,*,it,*>: Pesce aggiunto all'ordinazione
+<*,*,es,*>: Pescado añadido al pedido
+<*,*,*,*>:  Fish added to the order
+----
+TTS
+<*,*,it,*>: Pesce aggiunto all'ordinazione
+<*,*,es,*>: Pescado añadido al pedido
+<*,*,*,*>:  Fish added to the order
+----

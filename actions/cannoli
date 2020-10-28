@@ -3,11 +3,11 @@ IMAGE
 ----
 TEXT
 <*,*,it,*>: cannoli aggiunti all'ordinazione
-<*,*,es,*>: cannoli aggiunti all'ordinazione
+<*,*,es,*>: cannoli añadido al pedido
 <*,*,*,*>:  cannoli added to the order
 ----
 TTS
 <*,*,it,*>: cannoli aggiunti all'ordinazione
-<*,*,es,*>: cannoli aggiunti all'ordinazione
+<*,*,es,*>: cannoli añadido al pedido
 <*,*,*,*>:  cannoli added to the order
 ----

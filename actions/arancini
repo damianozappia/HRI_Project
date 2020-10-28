@@ -1,0 +1,13 @@
+IMAGE
+<*,*,*,*>:  img/arancini.jpg
+----
+TEXT
+<*,*,it,*>: arancini aggiunti all'ordinazione
+<*,*,es,*>: arancini siciliano añadido a la orden
+<*,*,*,*>:  arancini added to the order
+----
+TTS
+<*,*,it,*>: arancini aggiunti all'ordinazione
+<*,*,es,*>: arancini siciliano añadido a la orden
+<*,*,*,*>:  arancini added to the order
+----

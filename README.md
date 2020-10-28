@@ -57,8 +57,6 @@ To run commands in ASR modality, another script is needed to be executed, and we
 
 #### Touch robot body 
 To interact with the robot by activating the sensors in its body:
- 
-To run commands in ASR modality, another script is needed to be executed, and we have: 
 
     cd HRI/doker
     sudo ./run_bash 0.4.1
