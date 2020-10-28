@@ -1,0 +1,11 @@
+TEXT
+<*,*,it,*>: Perfetto, mando l'ordinazione alla cucina, presto sarà pronto!
+<*,*,es,*>: Bueno, la ordenación ha sido enviada, tus platos llegarán pronto!
+<*,*,*,*>:  Great, the ordination has been sent, your dishes will arrive soon!
+----
+TTS
+<*,*,it,*>: Perfetto, mando l'ordinazione alla cucina, presto sarà pronto!
+<*,*,es,*>: Bueno, la ordenación ha sido enviada, tus platos llegarán pronto!
+<*,*,*,*>:  Great, the ordination has been sent, your dishes will arrive soon!
+----
+

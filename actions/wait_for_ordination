@@ -1,0 +1,11 @@
+TEXT
+<*,*,it,*>: Accomodatevi prego, sarò da voi tra un minuto per l'ordinazione.
+<*,*,es,*>: Por favor, tome asiento, estaré con usted en un minuto para ordenar.
+<*,*,*,*>:  Please take place, I'll be here in a minute for the ordination.
+----
+TTS
+<*,*,it,*>: Accomodatevi prego, sarò da voi tra un minuto per l'ordinazione.
+<*,*,es,*>: Por favor, tome asiento, estaré con usted en un minuto para ordenar.
+<*,*,*,*>:  Please take place, I'll be here in a minute for the ordination.
+----
+

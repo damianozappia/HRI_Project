@@ -3,11 +3,11 @@ IMAGE
 ----
 TEXT
 <*,*,it,*>: insalata aggiunta all'ordinazione
-<*,*,es,*>: insalata aggiunta all'ordinazione
+<*,*,es,*>: ensalada agregada a la orden
 <*,*,*,*>:  salad added to the order
 ----
 TTS
 <*,*,it,*>: insalata aggiunta all'ordinazione
-<*,*,es,*>: insalata aggiunta all'ordinazione
+<*,*,es,*>: ensalada agregada a la orden
 <*,*,*,*>:  salad added to the order
 ----

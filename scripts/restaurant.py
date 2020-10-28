@@ -115,7 +115,7 @@ def welcome():
         im.execute('full')    
     
     if (a!='timeout'):
-        im.execute('see_you')
+        im.execute('wait_for_ordination')
 
     im.init()
 
@@ -141,7 +141,7 @@ def menu():
     
     table_num = im.ask('table_confirmation', timeout=10)
     print("-------------------------------------------")
-    print("the table number issssss", table_num)
+    print("the table number is", table_num)
     print("-------------------------------------------")
 
     #--------------
@@ -172,7 +172,7 @@ def menu():
    
     if (b!='timeout'):
         #im.execute(b)
-        im.execute('goodbye')
+        im.execute('order_confirmed')
 
 
     im.init()
@@ -277,7 +277,7 @@ if __name__ == "__main__":
 
     try:
         while len(client_queue) > 0:
-            mws.run_interaction(welcome)
+            #mws.run_interaction(welcome)
             next_turn = client_queue.popleft()
             if len(client_queue) > 0:
                 sentence = "Calling to client with number "+str(next_turn)
@@ -285,8 +285,8 @@ if __name__ == "__main__":
                 print("-------------------------------------------")
                 print ("  -- Say: "+sentence)
                 print("-------------------------------------------")
-            # mws.run_interaction(info)
-            #mws.run_interaction(menu)
+            #mws.run_interaction(info)
+            mws.run_interaction(menu)
 
     except KeyboardInterrupt:
          #Disconnecting callbacks and Threads
